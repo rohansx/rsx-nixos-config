@@ -1,4 +1,4 @@
-# rsx NixOS Dotfiles
+# NixOS Dotfiles
 
 My personal NixOS configuration featuring Hyprland, Waybar, Rofi, and SwayNC with the Catppuccin Mocha theme.
 

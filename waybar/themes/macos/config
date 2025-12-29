@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 0,
+    "spacing": 0,
+
+    "modules-left": ["custom/appmenu"],
+    "modules-center": ["hyprland/workspaces", "clock"],
+    "modules-right": ["pulseaudio", "network", "bluetooth", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "●",
+            "default": "○"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%a %b %d  %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": "~/.config/ml4w/settings/networkmanager.sh"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "~/.config/ml4w/settings/bluetooth.sh"
+    },
+
+    "tray": {
+        "spacing": 8,
+        "icon-size": 14
+    },
+
+    "custom/appmenu": {
+        "format": "",
+        "on-click": "rofi -show drun -replace",
+        "tooltip-format": "Applications"
+    }
+}

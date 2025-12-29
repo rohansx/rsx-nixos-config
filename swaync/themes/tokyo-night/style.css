@@ -1,0 +1,286 @@
+/* Tokyo Night Theme for SwayNC */
+@import "colors.css";
+
+/* === Global Reset === */
+* {
+  color: @fg;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", FontAwesome;
+  transition: 200ms ease;
+}
+
+/* === Control Center Container === */
+.control-center {
+  background: alpha(@bg, 0.95);
+  border-radius: 16px;
+  border: 2px solid @bg_highlight;
+  margin: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* === Buttons Grid === */
+.widget-buttons-grid {
+  margin: 8px;
+  padding: 4px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 6px;
+  padding: 16px 24px;
+  background: @bg_highlight;
+  color: @fg;
+  border-radius: 12px;
+  border: 2px solid @terminal_black;
+  font-size: 20px;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button label {
+  color: @fg;
+  font-size: 20px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @terminal_black;
+  border-color: @blue;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover label {
+  color: @blue;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @blue;
+  color: @bg;
+  border-color: @blue;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+  color: @bg;
+}
+
+/* === Brightness & Volume Sliders === */
+.widget-backlight,
+.widget-volume {
+  padding: 14px 16px;
+  margin: 8px 12px;
+  border-radius: 12px;
+  background: @bg_highlight;
+  border: 1px solid @terminal_black;
+}
+
+.widget-backlight label,
+.widget-volume label {
+  color: @fg;
+  font-size: 18px;
+  margin-right: 12px;
+  min-width: 24px;
+}
+
+.widget-backlight trough,
+.widget-volume trough {
+  background: @terminal_black;
+  border-radius: 8px;
+  min-height: 10px;
+}
+
+.widget-backlight trough highlight,
+.widget-volume trough highlight {
+  background: linear-gradient(90deg, @blue, @magenta);
+  border-radius: 8px;
+  min-height: 10px;
+}
+
+.widget-backlight scale slider,
+.widget-volume scale slider {
+  background: @fg;
+  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  margin: -4px;
+}
+
+/* === Music Player (MPRIS) === */
+.widget-mpris {
+  border-radius: 12px;
+  margin: 8px 12px;
+  background: @bg_highlight;
+  border: 1px solid @terminal_black;
+  padding: 12px;
+}
+
+.widget-mpris button {
+  background: @terminal_black;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 4px;
+  min-width: 36px;
+  min-height: 36px;
+  color: @fg;
+}
+
+.widget-mpris button:hover {
+  background: @blue;
+  color: @bg;
+}
+
+.widget-mpris-player {
+  border-radius: 12px;
+}
+
+.widget-mpris-album-art {
+  border-radius: 8px;
+  margin: 8px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: @fg;
+}
+
+.widget-mpris-subtitle {
+  font-size: 12px;
+  color: @dark5;
+}
+
+/* === Notifications Title === */
+.widget-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 12px 8px 12px;
+  color: @fg;
+}
+
+.widget-title button {
+  background: @bg_highlight;
+  border-radius: 8px;
+  padding: 6px 14px;
+  border: 1px solid @terminal_black;
+  color: @fg;
+}
+
+.widget-title button:hover {
+  background: @red;
+  color: @bg;
+  border-color: @red;
+}
+
+/* === Do Not Disturb === */
+.widget-dnd {
+  margin: 8px 12px;
+  font-size: 14px;
+}
+
+.widget-dnd > switch {
+  background: @bg_highlight;
+  border-radius: 20px;
+  padding: 4px;
+  min-width: 50px;
+  min-height: 26px;
+  border: 1px solid @terminal_black;
+}
+
+.widget-dnd > switch:hover {
+  background: @terminal_black;
+}
+
+.widget-dnd > switch:checked {
+  background: @magenta;
+}
+
+.widget-dnd > switch slider {
+  background: @fg;
+  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 2px;
+}
+
+/* === Notifications === */
+.notification {
+  background: @bg_highlight;
+  border-radius: 12px;
+  border: 1px solid @terminal_black;
+  margin: 8px 12px;
+  padding: 12px;
+}
+
+.notification:hover {
+  border-color: @blue;
+}
+
+.notification .notification-content {
+  margin: 8px;
+}
+
+.notification .notification-default-action {
+  border-radius: 12px;
+}
+
+.notification .close-button {
+  background: @terminal_black;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px;
+  color: @fg;
+}
+
+.notification .close-button:hover {
+  background: @red;
+  color: @bg;
+}
+
+.notification.critical {
+  border-color: @red;
+  background: alpha(@red, 0.15);
+}
+
+/* === Notification Groups === */
+.notification-group {
+  margin: 8px 12px;
+}
+
+.notification-group-headers {
+  font-weight: 600;
+  color: @dark5;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @bg_highlight;
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: 1px solid @terminal_black;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @terminal_black;
+}
+
+/* === Floating Notifications === */
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* === Empty placeholder === */
+.blank-window {
+  background: transparent;
+}
+
+image.no-notifications {
+  -gtk-icon-style: symbolic;
+  color: @dark5;
+}
+
+label.no-notifications {
+  color: @dark5;
+}

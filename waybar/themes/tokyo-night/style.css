@@ -1,0 +1,120 @@
+@define-color bg #1a1b26;
+@define-color bg-dark #16161e;
+@define-color fg #c0caf5;
+@define-color blue #7aa2f7;
+@define-color cyan #7dcfff;
+@define-color green #9ece6a;
+@define-color magenta #bb9af7;
+@define-color red #f7768e;
+@define-color yellow #e0af68;
+@define-color orange #ff9e64;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#waybar > box {
+    background: alpha(@bg, 0.95);
+    border: 2px solid @blue;
+    border-radius: 12px;
+    margin: 8px 10px 0 10px;
+    padding: 2px 10px;
+}
+
+#workspaces button {
+    color: @fg;
+    padding: 0 8px;
+    border-radius: 8px;
+    margin: 4px 2px;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: @bg-dark;
+}
+
+#workspaces button.active {
+    background: @blue;
+    color: @bg;
+}
+
+#workspaces button.urgent {
+    background: @red;
+    color: @bg;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #custom-notification, #bluetooth {
+    padding: 0 12px;
+    margin: 4px 2px;
+    color: @fg;
+    border-radius: 8px;
+    background: @bg-dark;
+}
+
+#clock {
+    background: @magenta;
+    color: @bg;
+    font-weight: bold;
+}
+
+#battery {
+    background: @green;
+    color: @bg;
+}
+
+#battery.warning:not(.charging) {
+    background: @yellow;
+    color: @bg;
+}
+
+#battery.critical:not(.charging) {
+    background: @red;
+    color: @bg;
+}
+
+#network {
+    background: @cyan;
+    color: @bg;
+}
+
+#pulseaudio {
+    background: @orange;
+    color: @bg;
+}
+
+#bluetooth {
+    background: @blue;
+    color: @bg;
+}
+
+#custom-notification {
+    background: @magenta;
+    color: @bg;
+}
+
+#tray {
+    background: @bg-dark;
+}
+
+#custom-exit {
+    background: @red;
+    color: @bg;
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+#custom-appmenu {
+    background: @blue;
+    color: @bg;
+    padding: 0 15px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    font-weight: bold;
+}

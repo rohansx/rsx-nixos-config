@@ -1,0 +1,71 @@
+* {
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#waybar > box {
+    background: rgba(30, 30, 30, 0.85);
+    border-radius: 10px;
+    margin: 5px 400px 0 400px;
+    padding: 2px 15px;
+}
+
+#workspaces button {
+    color: #ffffff;
+    padding: 0 6px;
+    border-radius: 5px;
+    margin: 3px 1px;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+#clock, #battery, #network, #pulseaudio, #tray, #custom-notification, #bluetooth {
+    padding: 0 10px;
+    margin: 3px 1px;
+    color: #ffffff;
+}
+
+#clock {
+    font-weight: 500;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffcc00;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff3b30;
+}
+
+#network.disconnected {
+    color: #8e8e93;
+}
+
+#pulseaudio.muted {
+    color: #8e8e93;
+}
+
+#custom-appmenu {
+    color: #ffffff;
+    padding: 0 10px;
+    margin: 3px 1px;
+}
+
+#custom-exit {
+    color: #ffffff;
+    padding: 0 10px;
+    margin: 3px 1px;
+}

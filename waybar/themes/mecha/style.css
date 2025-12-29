@@ -1,0 +1,139 @@
+@define-color bg #0a0a0f;
+@define-color bg-light #12121a;
+@define-color cyan #00ffff;
+@define-color magenta #ff00ff;
+@define-color yellow #ffff00;
+@define-color green #00ff00;
+@define-color red #ff0055;
+@define-color orange #ff8800;
+@define-color white #ffffff;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#waybar > box {
+    background: alpha(@bg, 0.9);
+    border: 1px solid @cyan;
+    border-radius: 0;
+    margin: 5px 10px 0 10px;
+    padding: 2px 10px;
+}
+
+#workspaces button {
+    color: @cyan;
+    padding: 0 10px;
+    margin: 4px 2px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+#workspaces button:hover {
+    background: alpha(@cyan, 0.1);
+    border: 1px solid @cyan;
+}
+
+#workspaces button.active {
+    background: @cyan;
+    color: @bg;
+    border: 1px solid @cyan;
+}
+
+#workspaces button.urgent {
+    background: @red;
+    color: @bg;
+}
+
+#clock, #battery, #network, #pulseaudio, #tray, #custom-notification, #bluetooth {
+    padding: 0 12px;
+    margin: 4px 2px;
+    color: @white;
+    border: 1px solid @cyan;
+    background: alpha(@bg-light, 0.8);
+}
+
+#clock {
+    color: @cyan;
+    border-color: @cyan;
+    font-weight: bold;
+}
+
+#battery {
+    color: @green;
+    border-color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+    border-color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    border-color: @red;
+}
+
+#network {
+    color: @magenta;
+    border-color: @magenta;
+}
+
+#network.disconnected {
+    color: @red;
+    border-color: @red;
+}
+
+#pulseaudio {
+    color: @orange;
+    border-color: @orange;
+}
+
+#pulseaudio.muted {
+    color: #666;
+    border-color: #666;
+}
+
+#bluetooth {
+    color: @cyan;
+    border-color: @cyan;
+}
+
+#custom-notification {
+    color: @magenta;
+    border-color: @magenta;
+}
+
+#tray {
+    border-color: @cyan;
+}
+
+#custom-exit {
+    color: @red;
+    border-color: @red;
+    padding: 0 12px;
+    margin: 4px 2px;
+}
+
+#custom-exit:hover {
+    background: @red;
+    color: @bg;
+}
+
+#custom-appmenu {
+    color: @cyan;
+    border: 1px solid @cyan;
+    padding: 0 15px;
+    margin: 4px 2px;
+}
+
+#custom-appmenu:hover {
+    background: @cyan;
+    color: @bg;
+}
